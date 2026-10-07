@@ -1,0 +1,69 @@
+# Validação da Navegação do Perfil - Mobile e Desktop
+## Escopo validado
+
+* **Login do perfil `VENDEDOR**`: Autenticação com e-mail `vendedor@squad.com` e direcionamento/entrada direta em `/consulta`.
+
+
+* **Login do perfil `LOJISTA**`: Autenticação com e-mail `lojista@squad.com` e direcionamento/entrada em `/produtos`.
+
+
+* **Navegação do vendedor**: Acesso simplificado voltado ao atendimento presencial, restrito às rotas operacionais de consulta.
+
+
+* **Navegação do lojista**: Acesso ao painel principal de gestão de inventário (`/produtos`), cadastro de novos produtos e SKUs (`/produtos/novo`) e histórico de movimentações (`/movimentacoes`) com ações administrativas de entrada, saída e ajuste manual.
+
+
+* **Logout**: Encerramento seguro de sessão através da opção "Sair" presente nos cabeçalhos dos perfis.
+
+
+* **Interface e Responsividade**: Validação das resoluções Desktop ($1920 \times 1080\text{ px}$) e Mobile ($375 \times 812\text{ px}$), garantindo adaptação do layout.
+
+
+
+---
+
+## Resultado
+
+| Cenário | Resultado esperado | Situação |
+| --- | --- | --- |
+| **Login de Vendedor** | Acesso concedido e redirecionamento correto para `/consulta` | Aprovado (Conforme)
+
+ |
+| **Login de Lojista** | Acesso concedido e redirecionamento correto para `/produtos` | Aprovado (Conforme)
+
+ |
+| **Consulta do Vendedor** | Exibição da busca por modelo, status visual de estoque (Disponível, Último Par, Indisponível) e botões de desfecho rápido | Aprovado (Conforme)
+
+ |
+| **Catálogo de Produtos** | Exibição da listagem com suporte a filtros combinados (status, marca, categoria) e ações de gerenciamento | Aprovado (Conforme)
+
+ |
+| **Cadastro de Produtos** | Abertura do formulário `/produtos/novo` com criação automática de SKUs com saldo inicial zerado ao separar numerações por vírgula | Aprovado (Conforme)
+
+ |
+| **Histórico de Movimentações** | Apresentação da tabela de auditoria completa com filtros avançados e atalhos de ação rápida | Aprovado (Conforme)
+
+ |
+| **Registrar Nova Entrada** | Exibição de modal com seleção de numeração/saldo atual e campo para nota fiscal | Aprovado (Conforme)
+
+ |
+| **Registrar Nova Saída** | Exibição de modal para baixa de estoque com permissão para inclusão de observação | Aprovado (Conforme)
+
+ |
+| **Ajuste Manual** | Exigência e validação de regra de negócio para justificativa com no mínimo 5 caracteres | Aprovado (Conforme)
+
+ |
+
+---
+
+## Evidência automatizada
+
+Os cenários de teste manuais e as validações de regra de negócio cobrem integralmente os requisitos de usabilidade, responsividade e consistência definidos para a Sprint 2 no card `[S2-QA-035]`. As evidências capturadas abrangem:
+
+* **Telas de Login**: Formulário responsivo com visibilidade de senha e opção "Lembrar de mim".
+
+
+* **Catálogo e Cadastro**: Painel de gerenciamento de produtos com filtros e formulário de adição automática de grade.
+
+
+* **Auditoria de Estoque**: Modal de entrada de mercadorias e painel completo do histórico de movimentações.
